@@ -2,6 +2,7 @@ const form = document.getElementById('chat-form');
 const messageInput = document.getElementById('message');
 const chatResponse = document.getElementById('chat-response');
 let context = "";
+
 form.addEventListener('submit', (event) => {
 	event.preventDefault(); // Prevent form submission and page refresh
 
@@ -12,12 +13,12 @@ form.addEventListener('submit', (event) => {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
-			'Authorization': 'Bearer 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',
+			'Authorization': 'Bearer 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',
 		},
 		body: JSON.stringify({
 			prompt: `Chat with ChatGPT:\n${context}You: ${message}\nChatGPT:`,
 			max_tokens: 64,
-			temperature: 1,
+			temperature: 0.7,
 			stop: ['\n']
 		}),
 	})
